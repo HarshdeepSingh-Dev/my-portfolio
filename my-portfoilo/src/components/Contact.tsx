@@ -12,7 +12,6 @@ export default function ContactSection() {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm<Inputs>();
 
@@ -75,12 +74,15 @@ export default function ContactSection() {
             <input
               type="email"
               id="email"
-              {...register("email")}
+              {...register("email", { required: "email is required" })}
               required
               className="w-full rounded-md px-4 py-3 text-white focus:outline-none border"
               placeholder="your.email@example.com"
             />
           </div>
+          <p className="py-2 text-center text-red-500">
+            {errors.email?.message}
+          </p>
 
           <div className="mb-6">
             <label

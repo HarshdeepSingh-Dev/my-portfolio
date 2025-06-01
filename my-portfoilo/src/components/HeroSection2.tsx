@@ -1,7 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
-import Image from "next/image";
 
 const HeroSection2 = () => {
   return (

@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 const slides = [
   {
@@ -100,7 +101,8 @@ const Slider3D = () => {
             transition={{ duration: 0.5 }}
             className="relative w-[320px] h-[220px] md:w-[650px] md:h-[500px] lg:w-[800px] lg:h-[600px] overflow-hidden"
           >
-            <img
+            <Image
+              fill
               src={websiteImage}
               alt={`${title} Screenshot`}
               className="absolute top-0 left-0 object-contain w-full h-full overflow-auto"

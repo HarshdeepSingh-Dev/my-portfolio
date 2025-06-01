@@ -3,6 +3,7 @@ import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -62,11 +63,13 @@ const Experience = ({ steps }: { steps: steps[] }) => {
         />
 
         {/* Airplane icon flying along the progress bar */}
-        <img
+        <Image
           ref={planeRef}
+          height={40}
+          width={40}
           src="/images/plane.png"
           alt="Flying airplane"
-          className="absolute z-20 w-10 h-10 rotate-[135deg] -translate-x-1/2 left-1/2"
+          className="absolute z-20 rotate-[135deg] -translate-x-1/2 left-1/2"
           style={{ top: 0 }}
         />
 
@@ -98,7 +101,9 @@ const Experience = ({ steps }: { steps: steps[] }) => {
               <div
                 className={`flex w-1/2 px-6 max-w-[300px] `}
               >
-                <img
+                <Image
+                width={200}
+                height={160}
                   src={step.image}
                   alt={step.title + " illustration"}
                   className={`object-contain max-h-40 filter invert`}
